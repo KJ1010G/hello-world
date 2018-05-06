@@ -7,25 +7,16 @@ public class WhoIsWhat {
 		int nameL = name.length;
 		int desL= des.length;
 		
-		while(true) {
-			int r1 = (int) (Math.random() * nameL);
-			int r2 = (int) (Math.random() * desL);
+		int r1, r2;
+		
+		while(nameL > 0 || desL > 0) {
+			r1 = (int) (Math.random() * nameL);
+			r2 = (int) (Math.random() * desL);
 			
-			temp= name[r1];
+			System.out.println(name[r1] + " is " + des[r2] );
+			
 			name[r1]= name[--nameL];
-			name[nameL]= temp;
-			
-			temp= des[r2];
 			des[r2]= des[--desL];
-			des[desL]= temp;
-			
-			System.out.println(name[nameL] + " is " + des[desL] );
-			if( (nameL) <= 0 ){
-				break;
-			}
-			if( (desL) <= 0 ){
-				break;
-			}
 		}
 	}
 }
